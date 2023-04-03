@@ -1,0 +1,59 @@
+﻿@model Pedido
+
+
+<h1>Hacer Pedido</h1>
+<form asp-action="HacerPedido">
+    <div class="form-group">
+        <label for="nombre">Nombre:</label>
+        <input asp-for="Nombre" class="form-control" />
+        <span asp-validation-for="Nombre" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label for="direccion">Dirección:</label>
+        <input asp-for="Direccion" class="form-control" />
+        <span asp-validation-for="Direccion" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label for="cantidadMedallones">Cantidad de medallones:</label>
+        <select asp-for="CantidadMedallones" class="form-control">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+        <span asp-validation-for="CantidadMedallones" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label>Ingredientes:</label>
+        <div>
+            <div class="form-check">
+                <input asp-for="Lechuga" class="form-check-input" />
+                <label class="form-check-label" for="lechuga">Lechuga</label>
+            </div>
+            <div class="form-check">
+                <input asp-for="Tomate" class="form-check-input" />
+                <label class="form-check-label" for="tomate">Tomate</label>
+            </div>
+            <div class="form-check">
+                <input asp-for="Huevo" class="form-check-input" />
+                <label class="form-check-label" for="huevo">Huevo</label>
+            </div>
+            <div class="form-check">
+                <input asp-for="Queso" class="form-check-input" />
+                <label class="form-check-label" for="queso">Queso</label>
+            </div>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Confirmar Pedido</button>
+</form>
+
+
+@section Scripts
+{
+    @{
+    
+    <partial name="_validationScriptsPartial">  </partial>
+    }
+
+
+}

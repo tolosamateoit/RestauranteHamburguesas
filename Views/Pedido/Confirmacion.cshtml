@@ -1,0 +1,25 @@
+﻿
+<h1>Pedido Confirmado</h1>
+<p>Gracias por su pedido, <strong> @Model.Nombre </strong>.</p>
+
+<p>El pedido se entregará en la dirección: <strong>@Model.Direccion</strong>.</p>
+<p>Ingredientes seleccionados:</p>
+<ul>
+    @if (Model.Lechuga)
+    {
+        <li>Lechuga</li>
+    }
+    @if (Model.Tomate)
+    {
+        <li>Tomate</li>
+    }
+    @if (Model.Huevo)
+    {
+        <li>Huevo</li>
+    }
+    @if (Model.Queso)
+    {
+        <li>Huevo</li>
+    }
+ </ul>
+ 
