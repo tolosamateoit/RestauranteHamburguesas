@@ -5,12 +5,84 @@
       "PackagePath": "staticwebassets\\Restaurante.bundle.scp.css"
     },
     {
+      "Id": "D:\\Programas\\VisualStudio_Projects\\Restaurante\\wwwroot\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.css"
+    },
+    {
+      "Id": "D:\\Programas\\VisualStudio_Projects\\Restaurante\\wwwroot\\css\\font-awesome.min.css",
+      "PackagePath": "staticwebassets\\css\\font-awesome.min.css"
+    },
+    {
+      "Id": "D:\\Programas\\VisualStudio_Projects\\Restaurante\\wwwroot\\css\\responsive.css",
+      "PackagePath": "staticwebassets\\css\\responsive.css"
+    },
+    {
       "Id": "D:\\Programas\\VisualStudio_Projects\\Restaurante\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
+      "Id": "D:\\Programas\\VisualStudio_Projects\\Restaurante\\wwwroot\\css\\style.css",
+      "PackagePath": "staticwebassets\\css\\style.css"
+    },
+    {
+      "Id": "D:\\Programas\\VisualStudio_Projects\\Restaurante\\wwwroot\\css\\style.css.map",
+      "PackagePath": "staticwebassets\\css\\style.css.map"
+    },
+    {
+      "Id": "D:\\Programas\\VisualStudio_Projects\\Restaurante\\wwwroot\\css\\style.scss",
+      "PackagePath": "staticwebassets\\css\\style.scss"
+    },
+    {
       "Id": "D:\\Programas\\VisualStudio_Projects\\Restaurante\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "D:\\Programas\\VisualStudio_Projects\\Restaurante\\wwwroot\\js\\leaflet\\images\\layers-2x.png",
+      "PackagePath": "staticwebassets\\js\\leaflet\\images\\layers-2x.png"
+    },
+    {
+      "Id": "D:\\Programas\\VisualStudio_Projects\\Restaurante\\wwwroot\\js\\leaflet\\images\\layers.png",
+      "PackagePath": "staticwebassets\\js\\leaflet\\images\\layers.png"
+    },
+    {
+      "Id": "D:\\Programas\\VisualStudio_Projects\\Restaurante\\wwwroot\\js\\leaflet\\images\\marker-icon-2x.png",
+      "PackagePath": "staticwebassets\\js\\leaflet\\images\\marker-icon-2x.png"
+    },
+    {
+      "Id": "D:\\Programas\\VisualStudio_Projects\\Restaurante\\wwwroot\\js\\leaflet\\images\\marker-icon.png",
+      "PackagePath": "staticwebassets\\js\\leaflet\\images\\marker-icon.png"
+    },
+    {
+      "Id": "D:\\Programas\\VisualStudio_Projects\\Restaurante\\wwwroot\\js\\leaflet\\images\\marker-shadow.png",
+      "PackagePath": "staticwebassets\\js\\leaflet\\images\\marker-shadow.png"
+    },
+    {
+      "Id": "D:\\Programas\\VisualStudio_Projects\\Restaurante\\wwwroot\\js\\leaflet\\leaflet-src.esm.js",
+      "PackagePath": "staticwebassets\\js\\leaflet\\leaflet-src.esm.js"
+    },
+    {
+      "Id": "D:\\Programas\\VisualStudio_Projects\\Restaurante\\wwwroot\\js\\leaflet\\leaflet-src.esm.js.map",
+      "PackagePath": "staticwebassets\\js\\leaflet\\leaflet-src.esm.js.map"
+    },
+    {
+      "Id": "D:\\Programas\\VisualStudio_Projects\\Restaurante\\wwwroot\\js\\leaflet\\leaflet-src.js",
+      "PackagePath": "staticwebassets\\js\\leaflet\\leaflet-src.js"
+    },
+    {
+      "Id": "D:\\Programas\\VisualStudio_Projects\\Restaurante\\wwwroot\\js\\leaflet\\leaflet-src.js.map",
+      "PackagePath": "staticwebassets\\js\\leaflet\\leaflet-src.js.map"
+    },
+    {
+      "Id": "D:\\Programas\\VisualStudio_Projects\\Restaurante\\wwwroot\\js\\leaflet\\leaflet.css",
+      "PackagePath": "staticwebassets\\js\\leaflet\\leaflet.css"
+    },
+    {
+      "Id": "D:\\Programas\\VisualStudio_Projects\\Restaurante\\wwwroot\\js\\leaflet\\leaflet.js",
+      "PackagePath": "staticwebassets\\js\\leaflet\\leaflet.js"
+    },
+    {
+      "Id": "D:\\Programas\\VisualStudio_Projects\\Restaurante\\wwwroot\\js\\leaflet\\leaflet.js.map",
+      "PackagePath": "staticwebassets\\js\\leaflet\\leaflet.js.map"
     },
     {
       "Id": "D:\\Programas\\VisualStudio_Projects\\Restaurante\\wwwroot\\js\\site.js",

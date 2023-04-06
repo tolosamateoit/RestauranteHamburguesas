@@ -1,7 +1,10 @@
 ﻿@model Pedido
 
 
-<h1>Hacer Pedido</h1>
+<h1>Complete su Información</h1>
+
+
+
 <form asp-action="HacerPedido">
     <div class="form-group">
         <label for="nombre">Nombre:</label>
@@ -10,9 +13,13 @@
     </div>
     <div class="form-group">
         <label for="direccion">Dirección:</label>
-        <input asp-for="Direccion" class="form-control" />
+        <input type="text" id="input-de-busqueda" placeholder="Buscar dirección..." asp-for="Direccion" class="form-control" />
         <span asp-validation-for="Direccion" class="text-danger"></span>
+
+        
     </div>
+
+   
     <div class="form-group">
         <label for="cantidadMedallones">Cantidad de medallones:</label>
         <select asp-for="CantidadMedallones" class="form-control">
@@ -44,8 +51,22 @@
             </div>
         </div>
     </div>
+    <br>
     <button type="submit" class="btn btn-primary">Confirmar Pedido</button>
 </form>
+
+@*<div>
+    <input type="text" id="input-de-busqueda" placeholder="Buscar dirección...">
+</div>*@
+<div style="margin-left:20%;" id="map-section">
+    @{
+        <partial name="~/Views/Map/_Index.cshtml">  </partial>
+    }
+</div>
+
+
+
+<a asp-area="" asp-controller="Home" asp-action="Index"><br>Volver al inicio.</a>
 
 
 @section Scripts
@@ -53,7 +74,11 @@
     @{
     
     <partial name="_validationScriptsPartial">  </partial>
+
+        
+
     }
+
 
 
 }

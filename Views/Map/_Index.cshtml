@@ -1,0 +1,88 @@
+﻿@{
+    ViewBag.Title = "Map";
+}
+
+<h2>Mapa de Google Maps</h2>
+
+<div id="map" style="height: 400px;"></div>
+<script>
+    function initMap() { };
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVXB5hsHNsbyJCsLUx7Nxj94i-nPIJx44&callback=initMap&libraries=places"></script>
+
+<script>
+    var map; //variable global
+    function initMap() {
+        var mapOptions = {
+            center: new google.maps.LatLng(19.4326, -99.1332),
+            zoom: 10
+        };
+        map = new google.maps.Map(document.getElementById('map'), mapOptions);
+        var input = document.getElementById('input-de-busqueda');
+        var autocomplete = new google.maps.places.Autocomplete(input);
+
+        // Agregar evento al hacer click en una sugerencia
+        autocomplete.addListener('place_changed', function () {
+            var place = autocomplete.getPlace();
+            if (place.geometry) {
+                map.setCenter(place.geometry.location);
+                map.setZoom(17);
+                buscarDireccion(place.formatted_address); // Llamar a buscarDireccion con la dirección seleccionada
+            }
+        });
+
+        // Modificar evento al presionar Enter
+        var input = document.getElementById('input-de-busqueda');
+        input.addEventListener('keydown', function (event) {
+            if (event.key === "Enter") {
+                if (document.getElementsByClassName('pac-item-selected').length > 0) {
+                    // Si se seleccionó una sugerencia, no hacer nada ya que el evento 'place_changed' se activará automáticamente
+                    return;
+                }
+                event.preventDefault();
+                buscarDireccion(input.value); // Llamar a buscarDireccion con el valor actual del input
+            }
+        });
+
+
+    }
+    
+
+    
+
+
+
+    function buscarDireccion(direccion) {
+        
+    
+
+        // Creamos un objeto geocoder
+        var geocoder = new google.maps.Geocoder();
+
+        // Realizamos la búsqueda de la dirección
+        geocoder.geocode({ 'address': direccion }, function (results, status) {
+            if (status === 'OK') {
+                // Centramos el mapa en la dirección encontrada
+                map.setCenter(results[0].geometry.location);
+
+                // Creamos un marcador en la dirección encontrada
+                var marker = new google.maps.Marker({
+                    map: map,
+                    position: results[0].geometry.location
+                });
+            } else {
+                alert('No se ha encontrado la dirección ingresada');
+            }
+        });
+    
+
+  
+
+        
+    }
+
+    window.addEventListener('load', initMap);
+
+</script>
+
