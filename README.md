@@ -18,22 +18,26 @@ Se guarda el pedido mediante Entity Framework en una base de datos.
 
 Se realiza una validacion en los campos. La ubicación marcada es la ubicación del restaurante ficticio.
 Hasta que no estén todos los campos completados correctamente, no se puede confirmar el pedido.
+
 ![image](https://user-images.githubusercontent.com/68035536/231653950-ee40ef89-07fb-404e-bdb5-6cb4b5ff6314.png)
 
 
 Cuando la dirección es válida, se marca en el mapa, y se bloquea la escritura, que se puede habilitar nuevamente con el 
 botón Modificar.
+
 ![image](https://user-images.githubusercontent.com/68035536/231652468-998b5c32-6427-47f8-b470-706d573f6c74.png)
 
 
 Casos de error:
 
 Caso 1: Dirección inválida o no encontrada:
+
 ![image](https://user-images.githubusercontent.com/68035536/231652765-6f9fe032-4954-4c7e-bdd4-8ddad5b60eb3.png)
  
 Respuesta: se debe volver a escribir la dirección.
 
 Caso 2: Dirección fuera de rango de delivery (10km de radio desde el restaurante)
+
 ![image](https://user-images.githubusercontent.com/68035536/231653773-043f98f0-71c4-4c8d-bb01-76e2d4c5364e.png)
 
 Respuesta: se debe volver a escribir la dirección.
@@ -45,7 +49,9 @@ Se calcula el precio distancia como un precio fijo de 100 + 0.01 por metro.
 
 ![image](https://user-images.githubusercontent.com/68035536/231654113-78c13393-86fc-4e06-a371-f5441a52eb49.png)
 
-Respuesta: se puede confirmar el pedido .
+Respuesta: se puede confirmar el pedido
+
+
 ![image](https://user-images.githubusercontent.com/68035536/231655324-9d4244be-0c83-464f-a3d6-dd8bfe33ffec.png)
 
 
@@ -54,6 +60,13 @@ Respuesta: se puede confirmar el pedido .
 Finalmente se guarda en la base de datos.
 
 ![image](https://user-images.githubusercontent.com/68035536/231655562-a1f9c531-2f70-4610-a387-43ee85151142.png)
+
+
+
+
+
+
+
 
 
 
