@@ -1,6 +1,6 @@
 # **__RestauranteHamburguesas (EN CONSTRUCCIÓN)__**
 
-**__Resumen__**
+__**Resumen**__
 
 
 
