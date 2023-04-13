@@ -9,14 +9,23 @@
     function initMap() { };
 </script>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVXB5hsHNsbyJCsLUx7Nxj94i-nPIJx44&callback=initMap&libraries=places"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVXB5hsHNsbyJCsLUx7Nxj94i-nPIJx44&callback=initMap&libraries=places,geometry"></script>
 
 <script>
     var map; //variable global
+    var precioFijo = 100;
+    var precioPorMetro = 0.01;
+    var botonmodificar = document.getElementById("modificar-btn");
+    botonmodificar.disabled = true;
+    //el botón está desactivado hasta que se confirma la dirección.
+    var botonconfirmar = document.getElementById("confirmarpedido");
+    botonconfirmar.disabled = true;
+    var campoDireccion = document.getElementById("input-de-busqueda");
+ 
     function initMap() {
         var mapOptions = {
-            center: new google.maps.LatLng(19.4326, -99.1332),
-            zoom: 10
+            center: new google.maps.LatLng(-31.4327766, -64.2117778),
+            zoom: 12
         };
         map = new google.maps.Map(document.getElementById('map'), mapOptions);
         var input = document.getElementById('input-de-busqueda');
@@ -26,14 +35,16 @@
         autocomplete.addListener('place_changed', function () {
             var place = autocomplete.getPlace();
             if (place.geometry) {
-                map.setCenter(place.geometry.location);
-                map.setZoom(17);
+                
+                
                 buscarDireccion(place.formatted_address); // Llamar a buscarDireccion con la dirección seleccionada
             }
         });
 
+
+
         // Modificar evento al presionar Enter
-        var input = document.getElementById('input-de-busqueda');
+        
         input.addEventListener('keydown', function (event) {
             if (event.key === "Enter") {
                 if (document.getElementsByClassName('pac-item-selected').length > 0) {
@@ -41,8 +52,16 @@
                     return;
                 }
                 event.preventDefault();
+                
                 buscarDireccion(input.value); // Llamar a buscarDireccion con el valor actual del input
             }
+        });
+        
+        var RestauranteLatLng = new google.maps.LatLng(-31.4328176, -64.1779591);
+        var RestauranteMarker = new google.maps.Marker({
+            position: RestauranteLatLng,
+            map: map, // mapa donde se desea mostrar el marcador
+            title: 'Ubicación del restaurante'
         });
 
 
@@ -54,26 +73,59 @@
 
 
     function buscarDireccion(direccion) {
+        var PrecioDistancia = 0;
+        
         
     
 
         // Creamos un objeto geocoder
         var geocoder = new google.maps.Geocoder();
-
+        var RestauranteLatLng = new google.maps.LatLng(-31.4328176, -64.1779591)
         // Realizamos la búsqueda de la dirección
         geocoder.geocode({ 'address': direccion }, function (results, status) {
             if (status === 'OK') {
+                var direccionLatLng = results[0].geometry.location;
                 // Centramos el mapa en la dirección encontrada
-                map.setCenter(results[0].geometry.location);
+                
+                //calcula la distancia entre el domicilio y la ubicacion del restaurante
+                var distancia = google.maps.geometry.spherical.computeDistanceBetween(RestauranteLatLng, direccionLatLng);
+                var distanciaEnKm = (distancia/1000).toFixed(2);
+                console.log("La direccion desde su dirección al restaurante es: " + distanciaEnKm + " Km.");
+                if( distancia > 10000 )
+                {
+                    campoDireccion.value = "";
+                  
+                    alert("La dirección indicada está fuera de rango");
+                    
+                    
+                    
+                }
+                else //solo si es valida la direccion
+                {
+                    botonconfirmar.disabled = false;
+                    map.setCenter(direccionLatLng);
+                    PrecioDistancia = precioFijo + precioPorMetro*distancia;
+                    console.log("el precio distancia es : " + PrecioDistancia);
+                    // Creamos un marcador en la dirección encontrada
+                    var marker = new google.maps.Marker({
+                        map: map,
+                        position: results[0].geometry.location
+                    });
 
-                // Creamos un marcador en la dirección encontrada
-                var marker = new google.maps.Marker({
-                    map: map,
-                    position: results[0].geometry.location
-                });
+                    campoDireccion.readOnly = true;
+                    botonmodificar.disabled = false;
+                    campoDireccion.value = results[0].formatted_address;
+                    
+                    
+
+                }
+               
             } else {
+                campoDireccion.value = "";
                 alert('No se ha encontrado la dirección ingresada');
+                
             }
+            
         });
     
 
@@ -82,6 +134,12 @@
         
     }
 
+
+    botonmodificar.addEventListener('click', () => {
+        campoDireccion.readOnly = false;
+        botonmodificar.disabled = true;
+        botonconfirmar.disabled = true;
+    });
     window.addEventListener('load', initMap);
 
 </script>

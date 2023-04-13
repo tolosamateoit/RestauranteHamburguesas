@@ -34,7 +34,7 @@ namespace Restaurante.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> HacerPedido(Pedido pedido)
         {
-
+            
            
             //aqui se pueden hacer validaciones de los campos
             if (ModelState.IsValid)
