@@ -1,6 +1,6 @@
 # **__RestauranteHamburguesas (EN CONSTRUCCIÓN)__**
 
-**==Resumen==**
+**Resumen**
 
 
 
@@ -8,7 +8,7 @@ Se trata de un proyecto donde el usuario puede pedir una hamburguesa a domicilio
 y la dirección de entrega. Se busca desarrollar el proyecto de forma que la aplicación pueda ser utilizada por un negocio real, aplicando
 técnicas de código limpio, y con la posibilidad de agregar funciones según las necesidades del restaurante.
 
-Funcionalidades:
+**Funcionalidades:**
 
 
 Se valida la distancia y se visualiza la ubicación utilizando la API de Google MAPS.
@@ -28,7 +28,7 @@ botón Modificar.
 ![image](https://user-images.githubusercontent.com/68035536/231652468-998b5c32-6427-47f8-b470-706d573f6c74.png)
 
 
-Casos de error:
+**Casos de error:**
 
 Caso 1: Dirección inválida o no encontrada:
 
@@ -42,7 +42,7 @@ Caso 2: Dirección fuera de rango de delivery (10km de radio desde el restaurant
 
 Respuesta: se debe volver a escribir la dirección.
 
-Caso de éxito:
+**Caso de éxito:**
 Todos los campos fueron validados correctamente
 La distancia de delivery es menor a 10km y la ubicación existe.
 Se calcula el precio distancia como un precio fijo de 100 + 0.01 por metro.
