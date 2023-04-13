@@ -7,6 +7,7 @@
 Se trata de un proyecto donde el usuario puede pedir una hamburguesa a domicilio, especificando sus datos personales, los ingredientes,
 y la dirección de entrega. Se busca desarrollar el proyecto de forma que la aplicación pueda ser utilizada por un negocio real, aplicando
 técnicas de código limpio, y con la posibilidad de agregar funciones según las necesidades del restaurante.
+El proyecto se ha creado utilizando un ASP.NET 7 MVC, ENTITY FRAMEWORK, SQL SERVER.
 
 **Funcionalidades:**
 
