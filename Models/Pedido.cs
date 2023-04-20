@@ -14,10 +14,14 @@ namespace Restaurante.Models
 
         [Range(1, 4)]
         public int CantidadMedallones { get; set; }
+
         public bool Lechuga { get; set; }
         public bool Tomate { get; set; }
         public bool Huevo { get; set; }
-        public bool Queso { get; set; } 
+        public bool Queso { get; set; }
+
+        public float Demora { get; set; }
+        public float Precio { get; set; }
 
 
     }
