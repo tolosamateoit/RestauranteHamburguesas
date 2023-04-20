@@ -1,5 +1,5 @@
 ## English
-This is the English version of the README. Para ver la version en español: [En español](README.es.md)
+This is the English version of the README. Para ver la version en español: [En español](README.es.MD)
 
 # **__RestauranteHamburguesas (WORKING ON IT)__**
 
